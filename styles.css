@@ -4,10 +4,14 @@
     font-family: 'Inconsolata', monospace;
 }
 
+.link {
+    margin-top: 8px;
+}
+
 .title {
     font-size: 64px;
 }
 
 .subtext {
-    font-size: 24px;
+    font-size: 16px;
 }
