@@ -27,17 +27,17 @@ function App() {
             Software Engineer based in Brooklyn, NY
             <hr />
             <div className="link">
-              <a href="mailto:emlstrick@gmail.com" target="_blank">
+              <a href="mailto:emlstrick@gmail.com" target="_blank" rel="noopener noreferrer">
                 Email
               </a>
             </div>
             <div className="link">
-              <a href="https://www.linkedin.com/in/emmalstrickland/" target="_blank">
+              <a href="https://www.linkedin.com/in/emmalstrickland/" target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
             </div>
             <div className="link">
-              <a href="https://github.com/emma-strickland" target="_blank">
+              <a href="https://github.com/emma-strickland" target="_blank" rel="noopener noreferrer">
                 Github
               </a>
             </div>
@@ -46,7 +46,7 @@ function App() {
               Currently listening to:
             </div>
             <div className="music-text">
-              <img src={response.image} className="album-art" onClick={openSpotifyProfile} />
+              <img src={response.image} alt="album-art" className="album-art" onClick={openSpotifyProfile} />
               <div className="music-subtitle">"{response.track}" – {response.artist}</div>
             </div>
           </div>
