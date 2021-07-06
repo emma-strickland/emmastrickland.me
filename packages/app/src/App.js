@@ -15,7 +15,9 @@ function App() {
       .then(res => res.json())
       .then(result => {
         setResponse(result);
-      })
+      }).catch(error => {
+        console.log('error: ', error);
+      });
   }, []);
 
   return (
