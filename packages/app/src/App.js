@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import config from './config';
 
 const SPOTIFY_PROFILE_URL = "https://open.spotify.com/user/1242322676?si=865f2ec92d6a4a14";
 
@@ -11,7 +12,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetch("http://localhost:4001/recentlyPlayed")
+    fetch(`${config.API_BASE_URL}/recentlyPlayed`)
       .then(res => res.json())
       .then(result => {
         setResponse(result);
