@@ -105,10 +105,10 @@ hr {
 
 @media (min-width: 350px) {
   .title {
-    font-size: 40px;
+    font-size: 48px;
   }
   .subtext {
-    font-size: 16px;
+    font-size: 24px;
   }
 }
 
