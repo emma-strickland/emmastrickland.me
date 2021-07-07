@@ -20,7 +20,7 @@ TODO: list how to install/start/setup server/frontend and env file(s).
     ```
     yarn frontend:build
     ```
-#API
+# API
 4. To access the server locally, run:
     ```
     yarn backend:start
