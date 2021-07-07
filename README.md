@@ -1,48 +1,38 @@
 # emmastrickland.me
 
-This is my personal website that that has Email, Linkedin, and Github links, as well as what I'm currently listening to on Spotify. The app is built with React and the server accesses the Last.fm API to show the most recently played track & artist. 
-
+This is my personal website that that has my basic contact information, as well as what I'm currently listening to on Spotify. The frontend is built with React and is hosted on Github pages, and the server is built with Express and is hosted on Heroku; both are deployed automatically on pushes to the `main` branch. The server accesses the [Last.fm API](https://www.last.fm/api) to display recently played track & artist. 
 
 ## Usage
 
-TODO: list how to install/start/setup server/frontend and env file(s).
+1. Clone the repository:
+  ```
+  git clone https://github.com/emma-strickland/emmastrickland.me
+  cd emmastrickland.me
+  ```
 
-1.  Install nodemon globally, otherwise `yarn backend:start` will fail.
+# Frontend
+
+1. Install depdencies and start the app: 
     ```
-    npm install -g nodemon
-    ```
-# App
-2. To access the app locally, run: 
-    ```
+    yarn frontend:install
     yarn frontend:start
     ```
-3. To access the app on Github Pages, run:
+2. Basic configuration changes (e.g., pointing at a different server) can be made in `./packages/app/src/config.js`.
+
+# Api
+
+1. Create an `.env` file in `./packages/api` folder to store your LastFM API key:
+   ```
+   LASTFM_API_KEY=abc123
+   ```
+2. Install dependencies and start the server:
     ```
-    yarn frontend:build
-    ```
-# API
-4. To access the server locally, run:
-    ```
+    yarn backend:install
     yarn backend:start
     ```
-5. To access the server on Heroku, run:
+3. For hot reload, install [Nodemon](https://www.npmjs.com/package/nodemon) globally and start using the following:
    ```
-   yarn backend:build
+   npm install -g nodemon
+   yarn backend:start-nodemon
    ```
-# .env
-
-6. Create a .env file in the api folder to store your API key(s). 
-    ```
-    EXAMPLE_API_KEY=apikey
-    ```
-7. Add .env to the .gitignore file. 
-8. In the server.js file, replace the api key(s) in the axios.get request with ${process.env.EXAMPLE_API_KEY}.
-9. Add dotenv to your api. 
-    ``` 
-    yarn add dotenv --save
-    ```
-10. Add this line to the server.js file:
-    ```
-    dotenv.config()
-    ```
 
