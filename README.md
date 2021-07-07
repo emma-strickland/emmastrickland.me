@@ -10,7 +10,7 @@ This is my personal website that that has my basic contact information, as well 
   cd emmastrickland.me
   ```
 
-`./packages/api` = Server
+`./packages/api` = Server \
 `./packages/app` = Frontend
 
 ### Api
