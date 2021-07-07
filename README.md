@@ -15,7 +15,7 @@ This is my personal website that that has my basic contact information, as well 
 
 ### Api
 
-1. Create an `.env` file in `./packages/api` folder to store your LastFM API key:
+1. Create an `.env` file in `./packages/api` to store your LastFM API key:
    ```
    LASTFM_API_KEY=abc123
    ```
