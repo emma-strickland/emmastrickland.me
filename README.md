@@ -10,16 +10,10 @@ This is my personal website that that has my basic contact information, as well 
   cd emmastrickland.me
   ```
 
-# Frontend
+`./packages/api` = Server
+`./packages/app` = Frontend
 
-1. Install depdencies and start the app: 
-    ```
-    yarn frontend:install
-    yarn frontend:start
-    ```
-2. Basic configuration changes (e.g., pointing at a different server) can be made in `./packages/app/src/config.js`.
-
-# Api
+### Api
 
 1. Create an `.env` file in `./packages/api` folder to store your LastFM API key:
    ```
@@ -36,3 +30,11 @@ This is my personal website that that has my basic contact information, as well 
    yarn backend:start-nodemon
    ```
 
+### App
+
+1. Install depdencies and start the app: 
+    ```
+    yarn frontend:install
+    yarn frontend:start
+    ```
+2. Basic configuration changes (e.g., pointing at a different server) can be made in `./packages/app/src/config.js`.
