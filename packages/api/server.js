@@ -1,41 +1,51 @@
-const axios = require('axios');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const express = require('express');
 
 dotenv.config();
 
-const PORT = process.env.PORT || 4001;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// API base URL
-const LASTFM_BASE_URL = "http://ws.audioscrobbler.com/2.0/"
+let users = {};
 
-app.get("/recentlyPlayed", (_req, res) => {
-    axios.get(`${LASTFM_BASE_URL}?method=user.getrecenttracks&user=stricklandemma&api_key=${process.env.LASTFM_API_KEY}&format=json`)
-        .then(response => {
-            const recentMusic = response.data.recenttracks.track[0];
-            const image = recentMusic.image && recentMusic.image.length > 0 ? recentMusic.image[2]['#text'] : undefined;
-            console.log('response: ', response.data);
-            res.json({
-                track: recentMusic.name,
-                artist: recentMusic.artist['#text'],
-                album: recentMusic.album['#text'],
-                image: image
-            })
-        })
-        .catch(error => {
-            console.log('Lastfm error: ', error);
-            res.status(500).json({
-                error: {
-                    message: "Error fetching lastfm api"
-                }
-            })
-        });
-});
+app.post('/register', (req, res) => {
+    // TODO: get the username and password
+    // TODO: store in an object
+    const username = req.body.username;
+    const password = req.body.password;
+    if (!username in users) {
+        users[username] = password
+    }
+    else {
+        console.log('Already registered')
+    }
+    res.sendStatus(200);
+})
 
+app.post('/login', (req, res) => {
+    // TODO: get the username and password
+    // TODO: store in an object
+    const username = req.body.username;
+    const password = req.body.password;
+    if (!username in users) {
+        res.sendStatus(404)
+        console.log('Username not found')
+    }
+    else if (username in users && users[username] === password) {
+        res.sendStatus(200)
+        console.log('Successfully logged in')
+    }
+    else if (username in users && users[username] !== password) {
+        res.sendStatus(404)
+        console.log('Invalid password')
+    }
+    res.sendStatus(200);
+})
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
