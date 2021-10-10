@@ -30,7 +30,13 @@ This is my personal website that that has my basic contact information, as well 
    yarn backend:start-nodemon
    ```
 
+### Deploy
+
+TODO(emma-strickland): Document.
+
 ### App
+
+#### Develop
 
 1. Install depdencies and start the app: 
     ```
@@ -38,3 +44,9 @@ This is my personal website that that has my basic contact information, as well 
     yarn frontend:start
     ```
 2. Basic configuration changes (e.g., pointing at a different server) can be made in `./packages/app/src/config.js`.
+
+#### Deploy
+
+The frontend app is automatically deployed to Github Pages on pushes to the `main` branch.
+
+

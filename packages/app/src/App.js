@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React/*, { useEffect, useState } */ from 'react';
 import './App.css';
 import config from './config';
 
 function App() {
-  const [response, setResponse] = useState('');
+  // const [response, setResponse] = useState('');
 
-  const openSpotifyProfile = () => {
-    window.open(config.SPOTIFY_PROFILE_URL, "_blank");
-  }
+  // const openSpotifyProfile = () => {
+  //   window.open(config.SPOTIFY_PROFILE_URL, "_blank");
+  // }
 
   // useEffect(() => {
   //   fetch(`${config.API_BASE_URL}/recentlyPlayed`)
@@ -46,10 +46,10 @@ function App() {
           <div className="current">
             Currently listening to:
           </div>
-          <div className="music-text">
+          {/* <div className="music-text">
             <img src={response.image} alt="album-art" className="album-art" onClick={openSpotifyProfile} />
             <div className="music-subtitle">"{response.track}" – {response.artist}</div>
-          </div>
+          </div> */}
         </div>
       </div>
       {/* )} */}
