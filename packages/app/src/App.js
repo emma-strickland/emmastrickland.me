@@ -4,7 +4,7 @@ import config from './config';
 
 function App() {
   const [response, setResponse] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const openSpotifyProfile = () => {
     window.open(config.SPOTIFY_PROFILE_URL, "_blank");
@@ -15,7 +15,7 @@ function App() {
       .then(res => res.json())
       .then(result => {
         setResponse(result);
-        setIsLoading(true)
+        setIsLoading(false)
       }).catch(error => {
         console.log('error: ', error);
       });
@@ -23,44 +23,43 @@ function App() {
 
   return (
     <div className="App">
-      {response && (
-        <div className="container">
-          <div className="title">{config.NAME}</div>
-          <div className="subtext">
-            Software Engineer based in Brooklyn, NY
-            <hr />
-            <div className="link">
-              <a href={`mailto:${config.EMAIL_ADDRESS}`} target="_blank" rel="noopener noreferrer">
-                Email
-              </a>
-            </div>
-            <div className="link">
-              <a href={config.LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
-                LinkedIn
-              </a>
-            </div>
-            <div className="link">
-              <a href={config.GITHUB_URL} target="_blank" rel="noopener noreferrer">
-                Github
-              </a>
-            </div>
-            <hr />
-            <div className="current">
-              Currently listening to:
-            </div>
-
-            {isLoading ?
-              <div className="music-text">
-                <img src={response.image} alt="album-art" className="album-art" onClick={openSpotifyProfile} />
-                <div className="music-subtitle">"{response.track}" – {response.artist}</div>
-              </div>
-              :
-              <div>Loading...</div>
-            }
-
+      {/* {response && ( */}
+      <div className="container">
+        <div className="title">{config.NAME}</div>
+        <div className="subtext">
+          Software Engineer based in Brooklyn, NY
+          <hr />
+          <div className="link">
+            <a href={`mailto:${config.EMAIL_ADDRESS}`} target="_blank" rel="noopener noreferrer">
+              Email
+            </a>
           </div>
+          <div className="link">
+            <a href={config.LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+          </div>
+          <div className="link">
+            <a href={config.GITHUB_URL} target="_blank" rel="noopener noreferrer">
+              Github
+            </a>
+          </div>
+          <hr />
+          <div className="current">
+            Currently listening to:
+          </div>
+
+          {!isLoading ?
+            <div className="music-text">
+              <img src={response.image} alt="album-art" className="album-art" onClick={openSpotifyProfile} />
+              <div className="music-subtitle">"{response.track}" – {response.artist}</div>
+            </div> :
+            <div className="current">Loading...</div>
+          }
+
         </div>
-      )}
+      </div>
+      {/* )} */}
     </div>
   );
 }
