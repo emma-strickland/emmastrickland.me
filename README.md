@@ -1,6 +1,6 @@
 # emmastrickland.me
 
-This is my personal website that that has my basic contact information, as well as what I'm currently listening to on Spotify. The frontend is built with React and is hosted on Github pages, and the server is built with Express and is hosted on Heroku; both are deployed automatically on pushes to the `main` branch. The server accesses the [Last.fm API](https://www.last.fm/api) to display my most recently played track & artist. 
+This is my personal website that that has my basic contact information, as well as what I'm currently listening to on Spotify. The frontend is built with React and is hosted on Github pages, and the server is built with Express and is hosted on Render; both are deployed automatically on pushes to the `main` branch. The server accesses the [Last.fm API](https://www.last.fm/api) to display my most recently played track & artist. 
 
 ## Usage
 

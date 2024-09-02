@@ -1,7 +1,7 @@
 const config = {
     API_BASE_URL: process.env.NODE_ENV === "development"
         ? "http://localhost:4001"
-        : "https://website-emma.herokuapp.com",
+        : "https://emmastrickland-me.onrender.com",
     NAME: "Emma Strickland",
     EMAIL_ADDRESS: "emlstrick@gmail.com",
     LINKEDIN_URL: "https://www.linkedin.com/in/emmalstrickland/",
